@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate and Display IDs</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+    }
+
+    .form-container {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mb-4">ID Generator</h1>
+
+    <!-- Form for generating IDs -->
+    <div class="form-container">
+      <form id="generateForm" action="/generate-id" method="post" class="mb-3">
+        <div class="form-group">
+          <label for="gender">Select Gender:</label>
+          <select id="gender" name="gender" class="form-control">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="showConfirmation()">Generate ID</button>
+      </form>
+    </div>
+
+    <!-- JavaScript for user confirmation -->
+    <script>
+      function showConfirmation() {
+        if (confirm("Do you want to view stored IDs?")) {
+          // If user chooses "OK", redirect to the display-ids page
+          window.location.href = "/display-ids";
+        } else {
+          // If user chooses "Cancel", stay on the current page
+        }
+      }
+    </script>
+
+  </div>
+</body>
+
+</html>

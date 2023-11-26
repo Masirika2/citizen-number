@@ -1,0 +1,52 @@
+<!-- views/display-ids.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stored IDs</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-4">Stored IDs</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% ids.forEach(id => { %>
+          <tr>
+            <td><%= id.generatedId %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
